@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QD8S1HLL7R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QD8S1HLL7R');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarsa Creative Space | Pricelist</title>
+  <link rel="icon" href="img/logo-sarsa.png" type="image/png" />
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toggle-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .rotate-icon {
+      transform: rotate(90deg);
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* Scrollbar Custom Style */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f5e7e2;
+      /* track agak krem */
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #7B2C27;
+      /* coklat maroon */
+      border-radius: 3px;
+    }
+
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: #7B2C27 #f5e7e2;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .navbar-link:hover {
+      color: #800000;
+    }
+
+    .mobile-link:hover {
+      color: #800000;
+    }
+
+    .toggle-icon:hover {
+      color: #800000;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-link {
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .navbar-link:hover {
+      color: #800000;
+    }
+
+    .navbar-link.active {
+      background-color: #800000;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="min-h-screen flex flex-col items-center pt-[100px]"
+    style="background: linear-gradient(to bottom, #F5EBE0, #EDCDBB, #F0DBDB, #E3B7A0);">
+    <!-- Navbar Desktop -->
+    <nav
+      class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1756px] h-[80px] bg-[#CD9875] rounded-[30px] flex items-center justify-between px-8 hidden lg:flex z-[9999] shadow-lg">
+      <div class="flex items-center gap-3">
+        <img src="pricelist/img/logo-sarsa.png" class="w-16 h-16 object-cover" alt="SARSA Logo" />
+        <div class="text-white text-2xl font-bold">Sarsa Creative Space</div>
+      </div>
+      <div class="flex gap-10">
+        <a href="/" class="text-white text-lg font-bold navbar-link">Beranda</a>
+        <a href="/pricelist" class="text-white text-lg font-bold navbar-link active">Pricelist</a>
+        <a href="/kolaborasi" class="text-white text-lg font-bold navbar-link">Kolaborasi</a>
+      </div>
+    </nav>
+    <!-- End Navbar Desktop -->
+
+    <!-- Navbar Mobile -->
+    <div
+      class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[600px] h-[70px] bg-[#CD9875] rounded-[20px] flex items-center justify-between px-4 lg:hidden z-[9999] shadow-lg">
+      <div class="flex items-center gap-2">
+        <img src="pricelist/img/logo-sarsa.png" class="w-12 h-12 object-cover" alt="SARSA Logo" />
+        <div class="text-white text-lg font-bold">Sarsa Creative Space</div>
+      </div>
+      <button onclick="toggleMenu()" id="menuButton" class="text-white text-xl font-bold toggle-icon">
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobileMenu"
+      class="hidden bg-[#CD9875] rounded-[20px] w-[90%] max-w-[600px] fixed left-1/2 transform -translate-x-1/2 mt-3 top-[70px] z-[9998] shadow-lg">
+      <a href="/" class="block text-white text-lg font-bold p-3 text-center mobile-link">Beranda</a>
+      <a href="/pricelist" class="block text-white text-lg font-bold p-3 text-center mobile-link">Pricelist</a>
+      <a href="/kolaborasi" class="block text-white text-lg font-bold p-3 text-center mobile-link">Kolaborasi</a>
+    </div>
+    <!-- End Navbar Mobile -->
+
+    <!-- Section 1 -->
+    <div class="relative w-full flex flex-col items-center justify-center mt-10 sm:mt-20 md:mt-32 lg:mt-20">
+      <!-- Flag Top (full width, adjusted slightly lower) -->
+      <!-- Flag Top (full width, adjusted slightly higher on mobile) -->
+      <img class="absolute top-[-90px] sm:top-[-110px] md:top-[-80px] lg:top-[-100px] w-full z-10"
+        src="pricelist/img/flag-top.svg" alt="Flag Top" />
+
+      <!-- Trolley Icon (centered, moved lower on desktop) -->
+      <div class="relative z-20 flex flex-col items-center mt-10 lg:mt-20 xl:mt-24">
+        <img class="w-20 sm:w-24 md:w-28 lg:w-40 xl:w-44" src="pricelist/img/trolley.svg" alt="Trolley Icon" />
+        <!-- Text Title (moved lower on desktop) -->
+        <h1
+          class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-4 lg:mt-14 xl:mt-16">
+          <img src="pricelist/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+          DAFTAR HARGA PAKET
+          <img src="pricelist/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+        </h1>
+      </div>
+      <!-- Flag Bottom (full width) -->
+      <img class="absolute bottom-[-130px] md:bottom-[-240px] left-0 w-full z-10" src="pricelist/img/flag-bottom.svg"
+        alt="Flag Bottom" />
+    </div>
+    <!-- Section Images -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-40 lg:mt-80">
+
+      <!-- Card 1: Melukis di Kanvas -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Melukis
+            Kanvas</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/lukis-kanvas.svg" alt="Melukis Kanvas" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Kanvas 20 x 20</li>
+              <li>Cat 12 warna</li>
+              <li>2 pcs kuas</li>
+              <li>Piring palette</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              40K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Melukis Bucket Hat -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Melukis
+            Bucket Hat</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/lukis-hat.svg" alt="Melukis Hat" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Bucket hat polos</li>
+              <li>Cat 12 warna</li>
+              <li>2 pcs kuas</li>
+              <li>Piring palette</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Melukis Pouch Makeup / Totebag -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Melukis
+            Pouch / Totebag</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/lukis-pouch.svg" alt="Melukis Pouch" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Pouch / totebag polos</li>
+              <li>Cat 12 warna</li>
+              <li>2 pcs kuas</li>
+              <li>Piring palette</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Melukis Cermin -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih (tanpa max-height & overflow-hidden) -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Melukis
+            Cermin</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/lukis-cermin.svg" alt="Melukis Cermin" class="h-20 object-contain">
+          </div>
+          <!-- Detail (scroll hanya di sini kalau konten panjang) -->
+          <div
+            class="relative max-h-40 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Cermin</li>
+              <li>Cat 12 warna</li>
+              <li>2 pcs kuas</li>
+              <li>Piring palette</li>
+              <li>Secangkir teh</li>
+            </ul>
+            <div class="text-center mt-2">
+              <img src="pricelist/img/bundling-clay.svg" alt="Bundling" class="h-16 my-2 mx-auto">
+              <div class="mt-2 font-semibold text-center">+ Bundling Clay
+                Polymer & Box</div>
+              <span class="text-[#7B2C27] text-lg font-bold block text-center">+15K</span>
+            </div>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Melukis Pot Tanah Liat -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih (tanpa max-height & overflow-hidden) -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Melukis
+            Pot Tanah Liat</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/lukis-pot.svg" alt="Melukis Pot" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div
+            class="relative max-h-40 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Pot tanah liat</li>
+              <li>Cat 12 warna</li>
+              <li>2 pcs kuas</li>
+              <li>Piring palette</li>
+              <li>Secangkir teh</li>
+            </ul>
+            <div class="text-center mt-2">
+              <img src="pricelist/img/bundling-pot.svg" alt="Bundling" class="h-16 my-2 mx-auto">
+              <div class="mt-2 font-semibold text-center">
+                Paket melukis pot tanah liat + tanah media tanam & biji
+                tumbuhan
+              </div>
+              <!-- Harga -->
+              <div class="text-center mt-4">
+                <div
+                  class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+                  50K
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              45K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Sewa -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30 max-h-[520px] overflow-hidden">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Sewa</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center gap-10 my-2">
+            <img src="pricelist/img/sewa-tripod.svg" alt="Tripod" class="h-16 object-contain">
+            <img src="pricelist/img/sewa-apron.svg" alt="Apron" class="w-16 h-16 object-contain">
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              5K
+            </div>
+          </div>
+          <!-- Detail -->
+          <div
+            class="relative h-44 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <hr class="border-t border-[#C06060] my-2 w-3/4 mx-auto" /><br>
+            <ul class="space-y-1 text-sm list-none px-2">
+              <li class="flex justify-between">
+                <span>Box</span><span>10K</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Paperbag</span><span>2K</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Tas kain Sarsa</span><span>5K</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Apron</span><span>10K</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Paket Airdry Clay -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket
+            Airdry Clay</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/airdry-clay.svg" alt="Airdry" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>200 gram airdry clay</li>
+              <li>Cat 12 warna</li>
+              <li>2 pcs kuas</li>
+              <li>Piring palette</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              40K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9: Paket Clay Polymer-->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket
+            Clay Polymer</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/paket-clay.svg" alt="Clay" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <br>
+              <li>12 warna clay polymer</li>
+              <li>Box</li>
+              <li>Secangkir teh</li>
+              <br>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              30K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10: Micro Block -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket
+            Micro Block</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/microblock-kecil.svg" alt="Microblock" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div
+            class="relative max-h-40 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Micro block size kecil</li>
+              <li>Secangkir teh</li>
+            </ul>
+            <div class="mt-2"><br>
+              <img src="pricelist/img/microblock-besar.svg" alt="Microblock" class="h-16 my-2 mx-auto">
+              <div class="mt-2">
+                <ul class="space-y-1 list-disc list-inside">
+                  <li>Micro block size kecil</li>
+                  <li>Secangkir teh</li>
+                </ul>
+              </div>
+              <!-- Harga -->
+              <div class="text-center mt-4">
+                <div
+                  class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+                  35K
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              25K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 11: Melukis Pot Tanah Liat -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih (tanpa max-height & overflow-hidden) -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Meronce</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/meronce_1.svg" alt="Meronce" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div
+            class="relative max-h-40 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>2 meter benang elastis</li>
+              <li>Gunting benang</li>
+              <li>5 pot manik manik (30 gram)</li>
+              <li>Secangkir teh</li>
+            </ul>
+            <div class="mt-2"><br>
+              <img src="pricelist/img/meronce_2.svg" alt="Meronce" class="h-16 my-2 mx-auto">
+              <div class="mt-2">
+                <ul class="space-y-1 list-disc list-inside">
+                  <li>4 meter benang elastis</li>
+                  <li>Gunting benang</li>
+                  <li>10 pot manik manik (60 gram)</li>
+                  <li>Secangkir teh</li>
+                </ul>
+              </div>
+              <!-- Harga -->
+              <div class="text-center mt-4">
+                <div
+                  class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+                  55K
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              35K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 12: Paket Kanvas Pola -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Kanvas Paint by Number</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/kanvas-pola.svg" alt="Kanvas Pola" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Kanvas dengan pola kode nomor</li>
+              <li>Cat</li>
+              <li>2 pcs kuas</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 13: Paket Kanvas Pola -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Tumblr Paint by Number</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/tumblr-pola.svg" alt="Tumblr Pola" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Tumblr dengan pola kode nomor</li>
+              <li>Cat</li>
+              <li>2 pcs kuas</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 14: Paket Totebag Pola -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Totebag Paint by Number</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/totebag-pola.svg" alt="Totebag Pola" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Totebag dengan pola kode nomor</li>
+              <li>Cat</li>
+              <li>2 pcs kuas</li>
+              <li>Secangkir teh</li>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 15: 3D Frame -->
+      <div class="relative w-full max-w-xs mx-auto mt-6 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket 3D Frame Pigura</h3>
+          <!-- Gambar -->
+          <div class="flex justify-center my-2">
+            <img src="pricelist/img/3d-frame.svg" alt="3D Frame" class="h-20 object-contain">
+          </div>
+          <!-- Detail -->
+          <div class="relative bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Frame pigura foto</li>
+              <li>12 warna clay polymer</li>
+              <li>Lem</li>
+              <li>Secangkir teh</li>
+              <br>
+            </ul>
+          </div>
+          <!-- Harga  -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 16: Take Away 1 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Meronce</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-1.png" alt="Takeaway1" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-1.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-1.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>10 pot manik manik (warna & bentuk variatif)</li>
+              <li>2x2 meter senar elastic</li>
+              <li>1 pcs gunting benang</li>
+              <li>Mini paperbag sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 17: Take Away 2 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Totebag by Number</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-2.png" alt="Takeaway2" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-2.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-2.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 pcs totebag berpola (gambar acak)</li>
+              <li>Pilihan tingkat kesulitan pola (mudah, medium, sulit)</li>
+              <li>2 pcs kuas</li>
+              <li>Cat warna sesuai kebutuhan pola</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              95K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 18: Take Away 3 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Canvas Polos</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-3.png" alt="Takeaway3" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-3.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-3.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 canvas polos ukuran 20x20</li>
+              <li>12 warna cat lukis</li>
+              <li>1 pcs piring pallet</li>
+              <li>2 pcs kuas</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              40K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 19: Take Away 4 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Paint By Number</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-4.png" alt="Takeaway4" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-4.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-4.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 pcs kanvas berpola (gambar acak)</li>
+              <li>Pilihan tingkat kesulitan pola (mudah, medium, sulit)</li>
+              <li>2 pcs kuas</li>
+              <li>Cat warna sesuai kebutuhan pola</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 20: Take Away 5 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Totebag</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-5.png" alt="Takeaway5" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-5.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-5.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 pcs totebag</li>
+              <li>12 warna cat lukis</li>
+              <li>2 pcs kuas</li>
+              <li>1 pcs piring palet</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 21: Take Away 6 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Pouch Canvas</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-6.png" alt="Takeaway6" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-6.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-5.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 pcs pouch</li>
+              <li>12 warna cat lukis</li>
+              <li>2 pcs kuas</li>
+              <li>1 pcs piring palet</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 22: Take Away 7 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Cermin</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-7.png" alt="Takeaway7" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-6.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-7.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 pcs cermin aesthetic (bentuk tergantung stock)</li>
+              <li>12 warna cat lukis</li>
+              <li>2 pcs kuas</li>
+              <li>1 pcs piring palet</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+              <li>Free bubble wrap</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+
+      <!-- Card 23: Take Away 8 -->
+      <div class="relative w-full max-w-xs mx-auto mt-5 bg-cover bg-center">
+        <!-- Rounded Top -->
+        <div class="absolute inset-x-0 -top-5 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <!-- Frame Putih -->
+        <div class="bg-white rounded-lg shadow-lg p-4 relative z-30">
+          <!-- Judul -->
+          <h3 class="text-center text-xl font-extrabold mt-2 text-[#7B2C27]">Paket Take Away Bucket Hat</h3>
+          <!-- Gambar + Lihat Detail -->
+          <div class="flex flex-col items-center my-2">
+            <img src="pricelist/img/takeaway-8.png" alt="Takeaway8" class="h-20 object-contain cursor-pointer"
+              onclick="openModal('pricelist/img/takeaway-8.png')">
+            <button class="mt-1 text-xs text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('pricelist/img/takeaway-8.png')">
+              Lihat Detail
+            </button>
+          </div>
+          <!-- Detail dengan scroll aktif lebih cepat -->
+          <div
+            class="relative max-h-32 overflow-y-auto bg-white rounded-md p-2 border border-white custom-scrollbar text-[#7B2C27] text-base">
+            <ul class="space-y-1 list-disc list-inside">
+              <li>1 pcs bucket hat warna cream/putih</li>
+              <li>12 warna cat lukis</li>
+              <li>2 pcs kuas</li>
+              <li>1 pcs piring palet</li>
+              <li>Box sarsa</li>
+              <li>Free kartu ucapan (by request)</li>
+              <li>Free bubble wrap</li>
+            </ul>
+          </div>
+          <!-- Harga -->
+          <div class="text-center mt-4">
+            <div class="inline-block px-4 py-1 bg-[#FFEAC4] text-2xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Preview -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+          <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+          <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+        </div>
+      </div>
+    </div>
+    <!-- WA Button -->
+    <a href="https://wa.me/6288215048095?text=Halo%20Kak%2C%20saya%20tertarik%20untuk%20reservasi%20pembuatan%20karya%20unik%20di%20Sarsa%20Creative.%20Bisa%20bantu%20saya%20untuk%20informasi%20lebih%20lanjut%3F"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-[#CD9875] hover:bg-[#b87e5d] text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+      aria-label="Chat WhatsApp">
+
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"
+        class="w-6 h-6 group-hover:scale-110 transition duration-300" />
+
+      <span class="hidden md:inline text-sm font-semibold tracking-tight group-hover:underline">
+        Butuh Bantuan?
+      </span>
+    </a>
+    <!-- End Section 1 -->
+
+    <!-- Section 2 -->
+    <br>
+    <h2
+      class="text-[#79380e] text-center font-quicksand font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight mt-4 flex items-center justify-center gap-1">
+      <img src="pricelist/img/ideate.svg" alt="Idea Icon" class="w-6 sm:w-8 md:w-10 lg:w-12" />
+      ORDER PAKETMU DISINI
+      <img src="pricelist/img/ideate.svg" alt="Idea Icon" class="w-6 sm:w-8 md:w-10 lg:w-12" />
+    </h2>
+    <a href="https://wa.me/6288215048095" target="_blank" rel="noopener noreferrer">
+      <button
+        class="bg-[#c06060] text-white text-sm sm:text-base md:text-xl lg:text-2xl font-quicksand font-bold px-5 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-full tracking-wider mt-6 mb-6">
+        ORDER
+      </button>
+    </a>
+    <!-- WA Floating Button (tetap di luar) -->
+    <a href="https://wa.me/6288215048095?text=Halo%20Kak%2C%20saya%20tertarik%20untuk%20reservasi%20pembuatan%20karya%20unik%20di%20Sarsa%20Creative.%20Bisa%20bantu%20saya%20untuk%20informasi%20lebih%20lanjut%3F"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-[#CD9875] hover:bg-[#b87e5d] text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+      aria-label="Chat WhatsApp">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"
+        class="w-6 h-6 group-hover:scale-110 transition duration-300" />
+      <span class="hidden md:inline text-sm font-semibold tracking-tight group-hover:underline">
+        Butuh Bantuan?
+      </span>
+    </a>
+  </div>
+  </div>
+  </div>
+  <!-- Section 2 -->
+
+  <footer class="bg-[#553e2f] text-white w-full pt-12 pb-6">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <!-- Kolom 1: Logo dan Deskripsi -->
+        <div>
+          <img src="pricelist/img/logo-sarsa.png" alt="Sarsa Logo" class="w-20 mb-4"> <!-- Ganti dengan logo kamu -->
+          <p class="text-sm leading-relaxed text-gray-300">
+            Sarsa adalah creative space Jogja yang bisa menjadi ruang kreatif untuk kamu yang ingin berhenti sejenak,
+            bernafas, dan mengekspresikan diri lewat karya. Tanpa perlu pengalaman, tanpa takut salah, karena semua
+            orang punya sisi kreatifnya masing-masing. Tentunya dengan banyak pilihan paket kreativitas yang
+            disediakan. Datang kapan aja, tanpa reservasi. Pilih aktivitasmu, dan nikmati waktu untuk berkarya.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Call Us -->
+        <div>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Call Us</h2>
+          <p class="text-sm text-gray-300">
+            Phone: <a href="tel:+6288215048095" class="hover:underline">+62 882-1504-8095</a>
+          </p>
+        </div>
+
+        <!-- Kolom 3: Quick Links -->
+        <div>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Quick Links</h2>
+          <ul class="text-sm space-y-2 text-gray-300">
+            <li><a href="#pricelist" class="hover:text-white">Price List</a></li>
+            <li><a href="#kolaborasi" class="hover:text-white">Kolaborasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: Alamat dan Sosial Media -->
+        <div>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Sarsa Creative Space</h2>
+          <p class="text-sm text-gray-300 mb-4">
+            📍 Nglengkong, Sukoharjo, Ngaglik, Sleman Regency, Yogyakarta 55581
+          </p>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-2">Follow Us</h2>
+          <div class="flex space-x-4">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/sarsacreativespace/" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center lg:justify-start hover:opacity-80 transition">
+              <img src="pricelist/img/instagram_icon.svg" alt="Instagram Icon" class="w-6 h-6 filter invert" />
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@sarsacreativespace" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center lg:justify-start hover:opacity-80 transition">
+              <img src="pricelist/img/tiktok_icon.svg" alt="TikTok Icon" class="w-6 h-6 filter invert" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Garis dan Copyright -->
+      <div class="border-t border-white mt-10 pt-6 text-center text-sm text-white">
+        <p>
+          Copyright © 2025 Sarsa Creative Space | Creative Space Jogja | Ruang Kreatif Yogyakarta
+        </p>
+        <p>
+          Powered by Sarsa | Website developed by Poe –
+          <span class="font-semibold text-white">Universitas Atma Jaya Yogyakarta</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
