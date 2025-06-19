@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QD8S1HLL7R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QD8S1HLL7R');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolaborasi - Sarsa</title>
+  <link rel="icon" href="img/logo-sarsa.png" type="image/png" />
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Galindo&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toggle-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .rotate-icon {
+      transform: rotate(90deg);
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .navbar-link:hover {
+      color: #800000;
+    }
+
+    .mobile-link:hover {
+      color: #800000;
+    }
+
+    .toggle-icon:hover {
+      color: #800000;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-link {
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .navbar-link:hover {
+      color: #800000;
+    }
+
+    .navbar-link.active {
+      background-color: #800000;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="min-h-screen flex flex-col items-center pt-[100px]"
+    style="background: linear-gradient(to bottom, #F5EBE0, #EDCDBB, #EBBA9E, #F0D7C8);">
+    <!-- Navbar Desktop -->
+    <nav
+      class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1756px] h-[80px] bg-[#CD9875] rounded-[30px] flex items-center justify-between px-8 hidden lg:flex z-[9999] shadow-lg">
+      <div class="flex items-center gap-3">
+        <img src="/workshop/img/logo-sarsa.png" class="w-16 h-16 object-cover" alt="SARSA Logo" />
+        <div class="text-white text-2xl font-bold">Sarsa Creative Space</div>
+      </div>
+      <div class="flex gap-10">
+        <a href="/" class="text-white text-lg font-bold navbar-link">Beranda</a>
+        <a href="/service" class="text-white text-lg font-bold navbar-link">Pricelist</a>
+        <a href="/kolaborasi" class="text-white text-lg font-bold navbar-link active">Kolaborasi</a>
+      </div>
+    </nav>
+    <!-- End Navbar Desktop -->
+
+    <!-- Navbar Mobile -->
+    <div
+      class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[600px] h-[70px] bg-[#CD9875] rounded-[20px] flex items-center justify-between px-4 lg:hidden z-[9999] shadow-lg">
+      <div class="flex items-center gap-2">
+        <img src="/workshop/img/logo-sarsa.png" class="w-12 h-12 object-cover" alt="SARSA Logo" />
+        <div class="text-white text-lg font-bold">Sarsa Creative Space</div>
+      </div>
+      <button onclick="toggleMenu()" id="menuButton" class="text-white text-xl font-bold toggle-icon">
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobileMenu"
+      class="hidden bg-[#CD9875] rounded-[20px] w-[90%] max-w-[600px] fixed left-1/2 transform -translate-x-1/2 mt-3 top-[70px] z-[9998] shadow-lg">
+      <a href="/" class="block text-white text-lg font-bold p-3 text-center mobile-link">Beranda</a>
+      <a href="/service" class="block text-white text-lg font-bold p-3 text-center mobile-link">Pricelist</a>
+      <a href="/kolaborasi" class="block text-white text-lg font-bold p-3 text-center mobile-link">Kolaborasi</a>
+    </div>
+    <!-- End Navbar Mobile -->
+
+    <!-- Section 1 -->
+    <div class="relative w-full flex flex-col items-center justify-center mt-10 sm:mt-20 md:mt-32 lg:mt-20">
+      <!-- Flag Top -->
+      <img class="absolute top-[-90px] sm:top-[-110px] md:top-[-80px] lg:top-[-100px] w-full z-10"
+        src="/workshop/img/flag-square.svg" alt="Flag Top" />
+
+      <div class="relative z-20 flex flex-col items-center mt-10 lg:mt-20 xl:mt-24">
+        <!-- Text Title -->
+        <h1
+          class="text-[#79380e] font-[Galindo] font-bold transition-none text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center px-6 sm:px-8 z-20 mt-8 lg:mt-14 xl:mt-16">
+          SARSA<br />
+          <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 font-bold transition-none">
+            CREATIVE WORKSHOP
+          </span>
+        </h1>
+      </div>
+      <!-- Cat Left -->
+      <img class="absolute bottom-[-150px] left-0 w-[160px] md:w-[220px] z-10" src="/workshop/img/cat-left.svg"
+        alt="Cat Left" />
+      <!-- Cat Right -->
+      <img class="absolute bottom-[-150px] right-0 w-[160px] md:w-[220px] z-10" src="/workshop/img/cat-right.svg"
+        alt="Cat Right" />
+    </div>
+    <!-- Section Images -->
+    <h1
+      class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-56 lg:mt-40 xl:mt-44">
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+      KONSEP
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+    </h1>
+
+    <!-- Deskripsi Konsep (pakai font Inter) -->
+    <div
+      class="mt-6 px-8 sm:px-16 md:px-32 text-center text-[#4a2a0c] text-base sm:text-lg md:text-xl leading-relaxed font-inter">
+      <p class="mb-4">
+        Sarsa Creative Space adalah sebuah platform kreatif yang berfokus pada kegiatan DIY (Do It Yourself) workshop
+        dengan tujuan membantu individu menyalurkan kreativitas, meningkatkan self-healing, dan menciptakan momen
+        berkualitas. Kami menyediakan berbagai aktivitas menarik seperti melukis di media unik, membuat kerajinan
+        tangan, hingga paint by number yang ramah untuk pemula.
+      </p>
+      <p>
+        Melalui workshop ini, kami tidak hanya menawarkan pengalaman seni yang menyenangkan, tetapi juga mendukung
+        peserta untuk mengasah keterampilan, meningkatkan kreativitas, dan menciptakan produk yang dapat digunakan
+        sehari-hari atau dijadikan hadiah personal yang unik.
+      </p>
+    </div>
+
+    <!-- Gambar Dekoratif di Bawah -->
+    <div class="mt-16 px-8 flex items-end justify-between">
+      <img src="/workshop/img/cat.svg" alt="Cat Icon" class="w-[80px] sm:w-[130px]">
+      <img src="/workshop/img/kanvas.svg" alt="Kanvas Icon" class="w-[80px] sm:w-[130px]">
+    </div>
+
+
+    <!-- Judul KONSEP -->
+    <h1
+      class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-20 lg:mt-16 xl:mt-20">
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+      PAKET TERBAIK
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+    </h1>
+
+    <!-- Paragraf tambahan -->
+    <p
+      class="mt-4 lg:mt-2 xl:mt-4 text-center text-[#4a2a0c] text-base sm:text-lg md:text-xl font-inter px-8 sm:px-16 md:px-32">
+      Yuk! Temukan berbagai produk terbaik di <span class="font-semibold text-[#79380e]">SARSA Creative Space</span>!
+    </p>
+
+
+    <!-- Container Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 mt-10">
+
+      <!-- Card 1 -->
+      <div class="relative w-full bg-cover bg-center">
+        <div class="absolute inset-x-0 -top-4 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <div class="bg-white rounded-2xl shadow-xl p-4 pt-6 relative z-30">
+          <h3 class="text-center text-lg font-bold text-[#7B2C27]">Paket Melukis Bucket Hat/Tote Bag</h3>
+          <div class="flex flex-col items-center my-3">
+            <img src="/workshop/img/best_1.svg" alt="Best1"
+              class="w-20 h-20 rounded-full object-cover shadow cursor-pointer"
+              onclick="openModal('/workshop/img/best_1.svg')">
+            <button class="mt-1 text-sm text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('/workshop/img/best_1.svg')">
+              Lihat Detail
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <div class="inline-block px-4 py-1.5 bg-[#FFEAC4] text-xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative w-full bg-cover bg-center">
+        <div class="absolute inset-x-0 -top-4 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <div class="bg-white rounded-2xl shadow-xl p-4 pt-6 relative z-30">
+          <h3 class="text-center text-lg font-bold text-[#7B2C27]">Paket Melukis Pot Tanah Liat</h3>
+          <div class="flex flex-col items-center my-3">
+            <img src="/workshop/img/best_2.svg" alt="Best2"
+              class="w-20 h-20 rounded-full object-cover shadow cursor-pointer"
+              onclick="openModal('/workshop/img/best_2.svg')">
+            <button class="mt-1 text-sm text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('/workshop/img/best_2.svg')">
+              Lihat Detail
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <div class="inline-block px-4 py-1.5 bg-[#FFEAC4] text-xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              50K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative w-full bg-cover bg-center">
+        <div class="absolute inset-x-0 -top-4 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <div class="bg-white rounded-2xl shadow-xl p-4 pt-6 relative z-30">
+          <h3 class="text-center text-lg font-bold text-[#7B2C27]">Paket Melukis Cermin Kaca</h3>
+          <div class="flex flex-col items-center my-3">
+            <img src="/workshop/img/best_3.svg" alt="Best3"
+              class="w-20 h-20 rounded-full object-cover shadow cursor-pointer"
+              onclick="openModal('/workshop/img/best_3.svg')">
+            <button class="mt-1 text-sm text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('/workshop/img/best_3.svg')">
+              Lihat Detail
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <div class="inline-block px-4 py-1.5 bg-[#FFEAC4] text-xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              65K
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="relative w-full bg-cover bg-center">
+        <div class="absolute inset-x-0 -top-4 bg-[#C06060] h-4 w-3/4 mx-auto rounded-t-full z-20"></div>
+        <div class="bg-white rounded-2xl shadow-xl p-4 pt-6 relative z-30">
+          <h3 class="text-center text-lg font-bold text-[#7B2C27]">Paket Air Dry Clay</h3>
+          <div class="flex flex-col items-center my-3">
+            <img src="/workshop/img/best_4.svg" alt="Best4"
+              class="w-20 h-20 rounded-full object-cover shadow cursor-pointer"
+              onclick="openModal('/workshop/img/best_4.svg')">
+            <button class="mt-1 text-sm text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+              onclick="openModal('/workshop/img/best_4.svg')">
+              Lihat Detail
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <div class="inline-block px-4 py-1.5 bg-[#FFEAC4] text-xl font-bold text-[#7B2C27] rounded-full shadow-sm">
+              40K
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- Modal Preview -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+      <div class="relative">
+        <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+        <button onclick="closeModal()"
+          class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+      </div>
+    </div>
+
+    <!-- Card Gambar Landscape Sebelum Section "DAPETIN SEMUA INI" -->
+    <div class="px-6 sm:px-12 md:px-32 mt-16">
+      <div class="relative w-full bg-cover bg-center">
+        <div class="flex flex-col items-center my-4 w-full max-w-5xl mx-auto">
+          <div class="w-full aspect-[3/1] sm:aspect-[5/2] rounded-2xl overflow-hidden shadow cursor-pointer"
+            onclick="openModal('/workshop/img/dokum_1.png')">
+            <img src="/workshop/img/dokum_1.png" alt="Dokum1" class="w-full h-full object-cover" />
+          </div>
+          <button class="mt-2 text-sm text-[#7B2C27] underline hover:text-[#C06060] focus:outline-none"
+            onclick="openModal('/workshop/img/dokum_1.png')">
+            Lihat Detail
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Judul Dapetin Semua Ini -->
+    <h2
+      class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-6 lg:mt-4 xl:mt-6">
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+      DAPETIN SEMUA INI
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+    </h2>
+
+    <!-- Paragraf daftar benefit -->
+    <ul
+      class="mt-4 text-[#4a2a0c] text-sm sm:text-base md:text-lg font-inter px-8 sm:px-16 md:px-32 list-disc list-inside space-y-2">
+      <li>Durasi workshop 90–150 menit</li>
+      <li>Peralatan dan bahan disediakan: 12 cat warna, 2 kuas, 1 piring palet</li>
+      <li>Mendapat pendamping untuk setiap workshop</li>
+      <li>Mendapat perlengkapan penunjang</li>
+      <li>Semua hasil workshop dapat dibawa pulang</li>
+      <li><span class="font-semibold">Customisasi Kegiatan:</span> Opsi untuk menyesuaikan workshop agar sesuai dengan
+        kebutuhan</li>
+    </ul>
+
+    <!-- Section Judul Venue -->
+    <h2
+      class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-6 lg:mt-4 xl:mt-6">
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+      VENUE
+      <img src="/workshop/img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+    </h2>
+
+    <!-- Grid Venue -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-12 md:px-20 lg:px-32 mt-8 text-[#4a2a0c] font-inter max-w-[1100px] mx-auto">
+
+      <!-- Gambar Lokasi Sarsa -->
+      <div class="flex justify-center md:justify-end items-center">
+        <img src="/workshop/img/venue_1.png" alt="Venue1" class="rounded-xl shadow-md w-full max-w-[400px] mx-auto">
+      </div>
+
+      <!-- Teks Lokasi Sarsa -->
+      <div class="flex items-center">
+        <p class="text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-4 md:px-0">
+          <span class="font-semibold text-[#79380e] block mb-1">Workshop di Lokasi Sarsa Creative Space</span>
+          Nikmati suasana yang nyaman dan mendukung kreativitas di lokasi kami, lengkap dengan fasilitas yang sudah kami
+          siapkan untuk menunjang kegiatan workshop.
+        </p>
+      </div>
+
+      <!-- Teks Lokasi Pilihan -->
+      <div class="flex items-center order-2 md:order-none">
+        <p class="text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-4 md:px-0">
+          <span class="font-semibold text-[#79380e] block mb-1">Workshop di Lokasi Pilihan Kalian</span>
+          Kami juga dapat menyelenggarakan workshop di tempat yang Anda tentukan, seperti kafe, sekolah, kampus, kantor,
+          atau lokasi lainnya. Jika diperlukan, kami siap bekerja sama dengan pihak ketiga untuk menyediakan tempat yang
+          sesuai.
+        </p>
+      </div>
+
+      <!-- Gambar Lokasi Pilihan -->
+      <div class="flex justify-center md:justify-start items-center">
+        <img src="/workshop/img/venue_2.png" alt="Venue2" class="rounded-xl shadow-md w-full max-w-[400px] mx-auto">
+      </div>
+
+    </div>
+
+
+    <!-- Grid Frame Bulat -->
+    <div
+      class="grid grid-cols-3 lg:grid-cols-6 gap-y-6 gap-x-4 sm:gap-x-6 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-24 mt-12 text-[#4a2a0c] font-inter max-w-[1440px] mx-auto">
+
+      <!-- Frame 1 -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/workshop/img/porto_1.svg" alt="Porto1"
+          class="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg cursor-pointer transition-transform hover:scale-105"
+          onclick="openModal('/workshop/img/porto_1.svg')">
+        <p class="mt-4 font-semibold text-base lg:text-lg">Brand Partnership (Emina)
+        </p>
+        <button class="text-sm text-[#79380e] mt-1 underline hover:text-[#5a2609] transition"
+          onclick="openModal('/workshop/img/porto_1.svg')">Lihat Detail</button>
+      </div>
+
+      <!-- Frame 2 -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/workshop/img/porto_2.svg" alt="Porto2"
+          class="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg cursor-pointer transition-transform hover:scale-105"
+          onclick="openModal('/workshop/img/porto_2.svg')">
+        <p class="mt-4 font-semibold text-base lg:text-lg">Travel Agent Partnership</p>
+        <button class="text-sm text-[#79380e] mt-1 underline hover:text-[#5a2609] transition"
+          onclick="openModal('/workshop/img/porto_2.svg')">Lihat Detail</button>
+      </div>
+
+      <!-- Frame 3 -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/workshop/img/porto_3.svg" alt="Porto3"
+          class="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg cursor-pointer transition-transform hover:scale-105"
+          onclick="openModal('/workshop/img/porto_3.svg')">
+        <p class="mt-4 font-semibold text-base lg:text-lg">Office Outing</p>
+        <button class="text-sm text-[#79380e] mt-1 underline hover:text-[#5a2609] transition"
+          onclick="openModal('/workshop/img/porto_3.svg')">Lihat Detail</button>
+      </div>
+
+      <!-- Frame 4 -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/workshop/img/porto_4.svg" alt="Porto4"
+          class="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg cursor-pointer transition-transform hover:scale-105"
+          onclick="openModal('/workshop/img/porto_4.svg')">
+        <p class="mt-4 font-semibold text-base lg:text-lg">School Outing</p>
+        <button class="text-sm text-[#79380e] mt-1 underline hover:text-[#5a2609] transition"
+          onclick="openModal('/workshop/img/porto_4.svg')">Lihat Detail</button>
+      </div>
+
+      <!-- Frame 5 -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/workshop/img/porto_5.svg" alt="Porto5"
+          class="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg cursor-pointer transition-transform hover:scale-105"
+          onclick="openModal('/workshop/img/porto_5.svg')">
+        <p class="mt-4 font-semibold text-base lg:text-lg">Resort/Hotel partnership</p>
+        <button class="text-sm text-[#79380e] mt-1 underline hover:text-[#5a2609] transition"
+          onclick="openModal('/workshop/img/porto_5.svg')">Lihat Detail</button>
+      </div>
+
+      <!-- Frame 6 -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/workshop/img/porto_6.svg" alt="Porto6"
+          class="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg cursor-pointer transition-transform hover:scale-105"
+          onclick="openModal('/workshop/img/porto_6.svg')">
+        <p class="mt-4 font-semibold text-base lg:text-lg">Resto/Cafe Partnership</p>
+        <button class="text-sm text-[#79380e] mt-1 underline hover:text-[#5a2609] transition"
+          onclick="openModal('/workshop/img/porto_6.svg')">Lihat Detail</button>
+      </div>
+    </div>
+    <!-- WA Floating Button (tetap di luar) -->
+    <a href="https://wa.me/6288215048095?text=Halo%20Kak%2C%20saya%20tertarik%20untuk%20reservasi%20pembuatan%20karya%20unik%20di%20Sarsa%20Creative.%20Bisa%20bantu%20saya%20untuk%20informasi%20lebih%20lanjut%3F"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-[#CD9875] hover:bg-[#b87e5d] text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+      aria-label="Chat WhatsApp">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"
+        class="w-6 h-6 group-hover:scale-110 transition duration-300" />
+      <span class="hidden md:inline text-sm font-semibold tracking-tight group-hover:underline">
+        Butuh Bantuan?
+      </span>
+    </a>
+  </div>
+  </div>
+  </div>
+  <!-- Section 2 -->
+
+  <footer class="bg-[#553e2f] text-white w-full pt-12 pb-6">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <!-- Kolom 1: Logo dan Deskripsi -->
+        <div>
+          <img src="pricelist/img/logo-sarsa.png" alt="Sarsa Logo" class="w-20 mb-4"> <!-- Ganti dengan logo kamu -->
+          <p class="text-sm leading-relaxed text-gray-300">
+            Sarsa adalah creative space Jogja yang bisa menjadi ruang kreatif untuk kamu yang ingin berhenti sejenak,
+            bernafas, dan mengekspresikan diri lewat karya. Tanpa perlu pengalaman, tanpa takut salah, karena semua
+            orang punya sisi kreatifnya masing-masing. Tentunya dengan banyak pilihan paket kreativitas yang
+            disediakan. Datang kapan aja, tanpa reservasi. Pilih aktivitasmu, dan nikmati waktu untuk berkarya.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Call Us -->
+        <div>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Call Us</h2>
+          <p class="text-sm text-gray-300">
+            Phone: <a href="tel:+6288215048095" class="hover:underline">+62 882-1504-8095</a>
+          </p>
+        </div>
+
+        <!-- Kolom 3: Quick Links -->
+        <div>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Quick Links</h2>
+          <ul class="text-sm space-y-2 text-gray-300">
+            <li><a href="#pricelist" class="hover:text-white">Price List</a></li>
+            <li><a href="#kolaborasi" class="hover:text-white">Kolaborasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: Alamat dan Sosial Media -->
+        <div>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Sarsa Creative Space</h2>
+          <p class="text-sm text-gray-300 mb-4">
+            📍 Nglengkong, Sukoharjo, Ngaglik, Sleman Regency, Yogyakarta 55581
+          </p>
+          <h2 class="text-lg font-semibold text-[#F65E5E] mb-2">Follow Us</h2>
+          <div class="flex space-x-4">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/sarsacreativespace/" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center lg:justify-start hover:opacity-80 transition">
+              <img src="workshop/img/instagram_icon.svg" alt="Instagram Icon" class="w-6 h-6 filter invert" />
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@sarsacreativespace" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center lg:justify-start hover:opacity-80 transition">
+              <img src="workshop/img/tiktok_icon.svg" alt="TikTok Icon" class="w-6 h-6 filter invert" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Garis dan Copyright -->
+      <div class="border-t border-white mt-10 pt-6 text-center text-sm text-white">
+        <p>
+          Copyright © 2025 Sarsa Creative Space | Creative Space Jogja | Ruang Kreatif Yogyakarta
+        </p>
+        <p>
+          Powered by Sarsa | Website developed by Poe –
+          <span class="font-semibold text-white">Universitas Atma Jaya Yogyakarta</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
