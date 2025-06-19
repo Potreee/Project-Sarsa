@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QD8S1HLL7R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QD8S1HLL7R');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarsa Creative Space</title>
+  <link rel="icon" href="img/logo-sarsa.png" type="image/png" />
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Galindo&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Tambahkan di bawah HTML -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toggle-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .rotate-icon {
+      transform: rotate(90deg);
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .navbar-link:hover {
+      color: #800000;
+    }
+
+    .mobile-link:hover {
+      color: #800000;
+    }
+
+    .toggle-icon:hover {
+      color: #800000;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-link {
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .navbar-link:hover {
+      color: #800000;
+    }
+
+    .navbar-link.active {
+      background-color: #800000;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="min-h-screen flex flex-col items-center pt-[100px]"
+    style="background: linear-gradient(to bottom, #FFEDDB, #F5EBE0, #EDCDBB, #E3B7A0, #DBA39A);">
+    <!-- Navbar Desktop -->
+    <nav
+      class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1756px] h-[80px] bg-[#CD9875] rounded-[30px] flex items-center justify-between px-8 hidden lg:flex z-[9999] shadow-lg">
+      <div class="flex items-center gap-3">
+        <img src="img/logo-sarsa.png" class="w-16 h-16 object-cover" alt="SARSA Logo" />
+        <div class="text-white text-2xl font-bold">Sarsa Creative Space</div>
+      </div>
+      <div class="flex gap-10">
+        <a href="/" class="text-white text-lg font-bold navbar-link active">Beranda</a>
+        <a href="/service" class="text-white text-lg font-bold navbar-link">Pricelist</a>
+        <a href="/kolaborasi" class="text-white text-lg font-bold navbar-link">Kolaborasi</a>
+      </div>
+    </nav>
+    <!-- End Navbar Desktop -->
+
+    <!-- Navbar Mobile -->
+    <div
+      class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[600px] h-[70px] bg-[#CD9875] rounded-[20px] flex items-center justify-between px-4 lg:hidden z-[9999] shadow-lg">
+      <div class="flex items-center gap-2">
+        <img src="img/logo-sarsa.png" class="w-12 h-12 object-cover" alt="SARSA Logo" />
+        <div class="text-white text-lg font-bold">Sarsa Creative Space</div>
+      </div>
+      <button onclick="toggleMenu()" id="menuButton" class="text-white text-xl font-bold toggle-icon">
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobileMenu"
+      class="hidden bg-[#CD9875] rounded-[20px] w-[90%] max-w-[600px] fixed left-1/2 transform -translate-x-1/2 mt-3 top-[70px] z-[9998] shadow-lg">
+      <a href="/" class="block text-white text-lg font-bold p-3 text-center mobile-link">Beranda</a>
+      <a href="/service" class="block text-white text-lg font-bold p-3 text-center mobile-link">Pricelist</a>
+      <a href="/kolaborasi" class="block text-white text-lg font-bold p-3 text-center mobile-link">Kolaborasi</a>
+    </div>
+    <!-- End Navbar Mobile -->
+
+    <!-- Section 1 -->
+    <div class="relative w-full flex flex-col items-center justify-center mt-10 sm:mt-20 md:mt-32 lg:mt-20">
+      <img class="absolute top-[-100px] sm:top-[-160px] md:top-[-175px] lg:top-[-195px] w-full z-10"
+        src="img/flag-top.svg" alt="Flag Top" />
+      <div class="relative z-20 flex flex-col items-center mt-4 lg:mt-20 xl:mt-24">
+
+        <!-- Text Title -->
+        <h1
+          class="text-[#79380e] font-[Galindo] font-bold transition-none text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center px-6 sm:px-8 z-20 mt-10 sm:mt-16 lg:mt-24 xl:mt-28">
+          SARSA<br />
+          <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 font-bold transition-none">
+            CREATIVE SPACE
+          </span>
+          <!-- Button MULAI -->
+          <a href="#section-images">
+            <button
+              class="bg-[#c06060] hover:bg-[#a84f4f] text-white text-sm sm:text-base md:text-xl lg:text-2xl font-quicksand font-normal px-5 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-full tracking-wider mt-6 mb-6 transition-all duration-300">
+              MULAI
+            </button>
+          </a>
+          <!-- Vectors for Mobile (below button) -->
+          <div class="flex justify-center gap-8 mt-4 sm:hidden">
+            <img src="img/male_left.svg" alt="Male Icon" class="w-11" />
+            <img src="img/female_right.svg" alt="Female Icon" class="w-16" />
+          </div>
+        </h1>
+
+        </h1>
+        <div class="w-full mx-auto" style="max-width: 100vw; overflow: hidden; margin-bottom: 0; margin-top: 2.5rem;">
+          <svg width="100%" height="40" viewBox="0 0 1200 40" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Garis atas -->
+            <path
+              d="M0 10 Q50 0 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 T900 10 T1000 10 T1100 10 T1200 10"
+              stroke="#CD9875" stroke-width="5" fill="none" stroke-dasharray="5,15" />
+            <!-- Garis bawah, posisinya 15px lebih bawah -->
+            <path
+              d="M0 25 Q50 15 100 25 T200 25 T300 25 T400 25 T500 25 T600 25 T700 25 T800 25 T900 25 T1000 25 T1100 25 T1200 25"
+              stroke="#CD9875" stroke-width="5" fill="none" stroke-dasharray="5,15" />
+          </svg>
+        </div>
+
+        <!-- Section Images -->
+        <h1 id="section-images"
+          class="scroll-mt-24 sm:scroll-mt-28 md:scroll-mt-32 lg:scroll-mt-36 xl:scroll-mt-40
+  relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-6 sm:mt-32 md:mt-28 lg:mt-24 xl:mt-28">
+          <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+          Selamat datang di Sarsa Creative Space
+          <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+        </h1>
+
+        <!-- Wrapper SVG Kiri-Konten-SVG Kanan -->
+        <div class="mt-6 px-4 sm:px-10 md:px-16 flex items-start justify-center gap-4 sm:gap-6 md:gap-10">
+          <!-- SVG Kiri (Male) -->
+          <img src="img/male_left.svg" alt="Male Icon"
+            class="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 mt-2 hidden sm:block" />
+          <!-- Konten Tengah -->
+          <div class="flex-1">
+            <!-- Deskripsi Konsep -->
+            <div
+              class="px-4 sm:px-6 md:px-8 text-[#4a2a0c] text-sm sm:text-base md:text-lg leading-relaxed font-inter text-justify">
+              <p class="mb-4">
+                Sarsa adalah creative space Jogja yang bisa menjadi ruang kreatif untuk kamu yang ingin berhenti
+                sejenak, bernafas, dan mengekspresikan diri lewat karya.
+                Tanpa perlu pengalaman, tanpa takut salah, karena semua orang punya sisi kreatifnya masing-masing.
+                Tentunya dengan banyak pilihan paket kreativitas yang disediakan.
+                Datang kapan aja, tanpa reservasi. Pilih aktivitasmu, dan nikmati waktu untuk berkarya.
+              </p>
+
+              <!-- Button WhatsApp -->
+              <a href="https://wa.me/6288215048095" target="_blank" rel="noopener noreferrer">
+                <button
+                  class="bg-[#4a2a0c] text-white text-sm sm:text-base font-quicksand font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full tracking-wide transition-all duration-300 hover:bg-[#3b2108] mb-6">
+                  <!-- Added mb-6 -->
+                  RESERVASI
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- SVG Kanan (Female) -->
+          <img src="img/female_right.svg" alt="Female Icon"
+            class="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44 mt-2 hidden sm:block" />
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 px-4 py-4 items-start">
+
+          <!-- GRID 1: Instagram Feed -->
+          <div class="w-full max-w-[500px] md:mt-0">
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+            <iframe src="//lightwidget.com/widgets/fe48968b09be5815bfc817de2ad21e3e.html" scrolling="no"
+              allowtransparency="true" class="lightwidget-widget w-full h-[500px] border-0 overflow-hidden">
+            </iframe>
+          </div>
+
+          <!-- GRID 2: Pricelist Flipbook -->
+          <div class="w-full max-w-[450px] md:mt-0">
+            <div class="swiper mySwiperPricelist w-full rounded-md overflow-hidden shadow-md border border-gray-300">
+              <div class="swiper-wrapper">
+                <!-- Halaman 1 -->
+                <div class="swiper-slide">
+                  <img src="img/Sarsa-PL1.png" alt="Halaman 1" class="w-full h-auto object-contain cursor-pointer"
+                    onclick="openModal('img/Sarsa-PL1.png')" />
+                </div>
+                <!-- Halaman 2 -->
+                <div class="swiper-slide">
+                  <img src="img/Sarsa-PL2.png" alt="Halaman 2" class="w-full h-auto object-contain cursor-pointer"
+                    onclick="openModal('img/Sarsa-PL2.png')" />
+                </div>
+              </div>
+
+              <!-- Tombol navigasi -->
+              <div class="swiper-button-next text-gray-600"></div>
+              <div class="swiper-button-prev text-gray-600"></div>
+            </div>
+          </div>
+          <!-- Modal Preview -->
+          <div id="imageModal"
+            class="fixed inset-0 bg-black bg-opacity-70 flex items-start justify-center z-50 hidden pt-10 sm:pt-20">
+            <div class="relative p-2">
+              <img id="modalImage" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-xl">
+              <button onclick="closeModal()"
+                class="absolute top-2 right-2 text-white bg-[#C06060] rounded-full px-3 py-1 text-sm font-bold">X</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Judul Shop -->
+        <h1
+          class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-20 lg:mt-16 xl:mt-20">
+          <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+          SHOP
+          <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+        </h1>
+        <!-- Paragraf tambahan -->
+        <p
+          class="mt-4 lg:mt-2 xl:mt-4 text-center text-[#4a2a0c] text-base sm:text-lg md:text-xl font-inter px-8 sm:px-16 md:px-32">
+          Temukan paket seni terbaik dan karya unik di <span class="font-semibold text-[#79380e]">Sarsa Creative
+            Space</span>!
+        </p>
+      </div>
+      <!-- Shop Katalog -->
+      <div class="w-full max-w-[1050px] mt-12">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Frame 1 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_1.png" alt="Frame 1" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 2 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_2.png" alt="Frame 2" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 3 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_3.png" alt="Frame 3" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 4 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_4.png" alt="Frame 4" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 5 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_5.png" alt="Frame 5" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 6 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_6.png" alt="Frame 6" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 7 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_7.png" alt="Frame 7" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 8 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_8.png" alt="Frame 8" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 9 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_9.png" alt="Frame 9" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 10 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/shop_10.png" alt="Frame 10" class="w-full h-full object-cover rounded-lg" />
+            </div>
+          </div>
+          <!-- Navigasi -->
+          <div class="swiper-button-next text-gray-800"></div>
+          <div class="swiper-button-prev text-gray-800"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <!-- Tombol Order & Hubungi (Ukuran Sedang) -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6 mb-10">
+        <!-- Tombol Order -->
+        <a href="https://shopee.co.id/sarsaindonesia" target="_blank" rel="noopener noreferrer">
+          <button
+            class="bg-[#c06060] text-white text-sm sm:text-base font-quicksand font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full tracking-wide transition-all duration-300 hover:bg-[#a84f4f]">
+            ORDER VIA SHOPEE
+          </button>
+        </a>
+        <!-- Tombol Hubungi -->
+        <a href="https://wa.me/6288215048095" target="_blank" rel="noopener noreferrer">
+          <button
+            class="bg-[#4a2a0c] text-white text-sm sm:text-base font-quicksand font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full tracking-wide transition-all duration-300 hover:bg-[#3b2108]">
+            ORDER VIA WHATSAPP
+          </button>
+        </a>
+      </div>
+      <!-- Judul Shop -->
+      <h1
+        class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-20 lg:mt-16 xl:mt-20">
+        <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+        GALERI INSPIRASI
+        <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+      </h1>
+    </div>
+
+    <!-- Galeri 1-->
+    <div class="w-full max-w-[1050px] mt-12">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Frame 1 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi1.jpeg" alt="Frame 1" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 2 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi2.jpeg" alt="Frame 2" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 3 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi3.jpeg" alt="Frame 3" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 4 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi4.jpeg" alt="Frame 4" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 5 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi5.jpeg" alt="Frame 5" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 6 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi6.jpeg" alt="Frame 6" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 7 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi7.jpeg" alt="Frame 7" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 8 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi8.jpeg" alt="Frame 8" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 9 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi9.jpeg" alt="Frame 9" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 10 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi10.jpeg" alt="Frame 10" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 11 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi11.jpeg" alt="Frame 11" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 12 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi12.jpeg" alt="Frame 12" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 13 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1-koleksi13.jpeg" alt="Frame 13" class="w-full h-full object-cover rounded-lg" />
+          </div>
+          <!-- Frame 14 -->
+          <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+            <img src="img/f1_koleksi14.jpg" alt="Frame 14" class="w-full h-full object-cover rounded-lg" />
+          </div>
+        </div>
+        <!-- Navigasi -->
+        <div class="swiper-button-next text-gray-800"></div>
+        <div class="swiper-button-prev text-gray-800"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- Galeri 2-->
+      <div class="w-full max-w-[1050px] mt-12">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Frame 1 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi1.jpg" alt="Frame 1" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 2 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi2.jpg" alt="Frame 2" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 3 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi3.jpg" alt="Frame 3" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 4 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi4.jpg" alt="Frame 4" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 5 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi5.jpg" alt="Frame 5" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 6 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi6.jpg" alt="Frame 6" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 7 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi7.jpg" alt="Frame 7" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 8 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi8.jpg" alt="Frame 8" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 9 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi9.jpg" alt="Frame 9" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 10 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi10.jpg" alt="Frame 10" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 11 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi11.jpg" alt="Frame 11" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 12 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi12.jpg" alt="Frame 12" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 13 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi13.jpg" alt="Frame 13" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <!-- Frame 14 -->
+            <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+              <img src="img/f2-koleksi14.jpg" alt="Frame 14" class="w-full h-full object-cover rounded-lg" />
+            </div>
+          </div>
+          <!-- Navigasi -->
+          <div class="swiper-button-next text-gray-800"></div>
+          <div class="swiper-button-prev text-gray-800"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Pins-->
+        <div class="w-full max-w-[1050px] mt-12">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Frame 1 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref1.png" alt="Frame 1" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 2 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref2.png" alt="Frame 2" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 3 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref3.png" alt="Frame 3" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 4 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref4.png" alt="Frame 4" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 5 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref5.png" alt="Frame 5" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 6 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref6.png" alt="Frame 6" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 7 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref7.png" alt="Frame 7" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 8 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref8.png" alt="Frame 8" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 9 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref9.png" alt="Frame 9" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 10 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref10.png" alt="Frame 10" class="w-full h-full object-cover rounded-lg" />
+              </div>
+              <!-- Frame 11 -->
+              <div class="swiper-slide w-[150px] h-[100px] md:w-[240px] md:h-[160px]">
+                <img src="img/foto-ref11.png" alt="Frame 11" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+            <!-- Navigasi -->
+            <div class="swiper-button-next text-gray-800"></div>
+            <div class="swiper-button-prev text-gray-800"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- Tombol Pins (Center + Spacing) -->
+          <div class="flex justify-center mt-6">
+            <a href="https://pin.it/38ocHNcCl" target="_blank" rel="noopener noreferrer">
+              <button
+                class="bg-[#c06060] hover:bg-[#d48080] text-white text-sm sm:text-base font-quicksand font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full tracking-wide transition-all duration-300">
+                REFERENSI
+              </button>
+            </a>
+          </div>
+
+
+
+
+          <!-- Frame Baru: Google Reviews -->
+          <div class="w-full max-w-[1050px] mt-12 px-4 sm:px-6 md:px-8 mx-auto">
+            <!-- Judul Section -->
+            <h2
+              class="text-[#79380e] font-quicksand font-bold text-2xl sm:text-3xl text-center mb-6 flex items-center justify-center gap-2">
+              <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+              TESTIMONI
+              <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+            </h2>
+
+            <!-- Embed Google Reviews Widget -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-c0e604e7-758c-4fd1-a0d6-baebf7daefb7" data-elfsight-app-lazy></div>
+
+
+            <!-- SECTION TENTANG KAMI -->
+            <h1
+              class="relative text-[#79380e] font-quicksand font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight text-center px-16 sm:px-20 z-20 flex items-center justify-center gap-1 mt-6 sm:mt-12 lg:mt-12 xl:mt-16">
+              <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+              TENTANG KAMI
+              <img src="img/ideate.svg" alt="Idea Icon" class="w-7 sm:w-9 md:w-11 lg:w-13" />
+            </h1>
+
+            <!-- MAPS & CONTACT INFO -->
+            <div class="flex flex-col lg:flex-row items-center justify-center mt-8 px-4 sm:px-8 md:px-16 gap-8">
+              <!-- Google Maps Embed -->
+              <div class="w-full lg:w-1/2 max-w-2xl h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden shadow-md">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.7066248372707!2d110.41995329999999!3d-7.714594800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59e542704f57%3A0x23940f7f7fd9c03f!2sSarsa%20Creative%20Space!5e0!3m2!1sen!2sid!4v1744211323980!5m2!1sen!2sid"
+                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div> <!-- pastikan ini tutup div MAPS & CONTACT -->
+          </div>
+          <!-- WA Floating Button (tetap di luar) -->
+          <a href="https://wa.me/6288215048095?text=Halo%20Kak%2C%20saya%20tertarik%20untuk%20reservasi%20pembuatan%20karya%20unik%20di%20Sarsa%20Creative.%20Bisa%20bantu%20saya%20untuk%20informasi%20lebih%20lanjut%3F"
+            target="_blank"
+            class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-[#CD9875] hover:bg-[#b87e5d] text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+            aria-label="Chat WhatsApp">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"
+              class="w-6 h-6 group-hover:scale-110 transition duration-300" />
+            <span class="hidden md:inline text-sm font-semibold tracking-tight group-hover:underline">
+              Butuh Bantuan?
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Section 2 -->
+    <br>
+    <!-- Section 2 -->
+    <br>
+    <footer class="bg-[#553e2f] text-white w-full pt-12 pb-6">
+      <div class="max-w-7xl mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+          <!-- Kolom 1: Logo dan Deskripsi -->
+          <div>
+            <img src="img/logo-sarsa.png" alt="Sarsa Logo" class="w-20 mb-4"> <!-- Ganti dengan logo kamu -->
+            <p class="text-sm leading-relaxed text-gray-300">
+              Sarsa adalah creative space Jogja yang bisa menjadi ruang kreatif untuk kamu yang ingin berhenti sejenak,
+              bernafas, dan mengekspresikan diri lewat karya. Tanpa perlu pengalaman, tanpa takut salah, karena semua
+              orang punya sisi kreatifnya masing-masing. Tentunya dengan banyak pilihan paket kreativitas yang
+              disediakan. Datang kapan aja, tanpa reservasi. Pilih aktivitasmu, dan nikmati waktu untuk berkarya.
+            </p>
+          </div>
+
+          <!-- Kolom 2: Call Us -->
+          <div>
+            <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Call Us</h2>
+            <p class="text-sm text-gray-300">
+              Phone: <a href="tel:+6288215048095" class="hover:underline">+62 882-1504-8095</a>
+            </p>
+          </div>
+
+          <!-- Kolom 3: Quick Links -->
+          <div>
+            <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Quick Links</h2>
+            <ul class="text-sm space-y-2 text-gray-300">
+              <li><a href="#pricelist" class="hover:text-white">Price List</a></li>
+              <li><a href="#kolaborasi" class="hover:text-white">Kolaborasi</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 4: Alamat dan Sosial Media -->
+          <div>
+            <h2 class="text-lg font-semibold text-[#F65E5E] mb-3">Sarsa Creative Space</h2>
+            <p class="text-sm text-gray-300 mb-4">
+              📍 Nglengkong, Sukoharjo, Ngaglik, Sleman Regency, Yogyakarta 55581
+            </p>
+            <h2 class="text-lg font-semibold text-[#F65E5E] mb-2">Follow Us</h2>
+            <div class="flex space-x-4">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/sarsacreativespace/" target="_blank" rel="noopener noreferrer"
+                class="flex items-center justify-center lg:justify-start hover:opacity-80 transition">
+                <img src="img/instagram_icon.svg" alt="Instagram Icon" class="w-6 h-6 filter invert" />
+              </a>
+
+              <!-- TikTok -->
+              <a href="https://www.tiktok.com/@sarsacreativespace" target="_blank" rel="noopener noreferrer"
+                class="flex items-center justify-center lg:justify-start hover:opacity-80 transition">
+                <img src="img/tiktok_icon.svg" alt="TikTok Icon" class="w-6 h-6 filter invert" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garis dan Copyright -->
+        <div class="border-t border-white mt-10 pt-6 text-center text-sm text-white">
+          <p>
+            Copyright © 2025 Sarsa Creative Space | Creative Space Jogja | Ruang Kreatif Yogyakarta
+          </p>
+          <p>
+            Powered by Sarsa | Website developed by Poe –
+            <span class="font-semibold text-white">Universitas Atma Jaya Yogyakarta</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- End Section 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="script-flip.js"></script>
+</body>
+
+</html>
