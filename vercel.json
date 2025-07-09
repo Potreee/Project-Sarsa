@@ -1,9 +1,8 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/page-home/src/index.html" },
-    { "source": "/pricelist", "destination": "/page-service/src/index.html" },
+    { "source": "/pricelist", "destination": "/page-pricelist/src/index.html" },
     { "source": "/kolaborasi", "destination": "/page-workshop/src/index.html" },
-    { "source": "/testing", "destination": "/page-testing/src/index.html" },
     { "source": "/error", "destination": "/page-error/src/index.html" },
 
     { "source": "/:page/img/:path*", "destination": "/page-:page/src/img/:path*" },
