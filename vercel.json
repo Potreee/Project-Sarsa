@@ -7,14 +7,17 @@
 
     { "source": "/pricelist/img/:path*", "destination": "/page-service/src/img/:path*" },
     { "source": "/pricelist/script.js", "destination": "/page-service/src/script.js" },
+    { "source": "/pricelist/tailwind.config.js", "destination": "/page-service/src/tailwind.config.js" },
 
     { "source": "/kolaborasi/img/:path*", "destination": "/page-workshop/src/img/:path*" },
     { "source": "/kolaborasi/script.js", "destination": "/page-workshop/src/script.js" },
+    { "source": "/kolaborasi/tailwind.config.js", "destination": "/page-workshop/src/tailwind.config.js" },
 
     { "source": "/error/img/:path*", "destination": "/page-error/src/img/:path*" },
     { "source": "/error/script.js", "destination": "/page-error/src/script.js" },
 
     { "source": "/img/:path*", "destination": "/page-home/src/img/:path*" },
-    { "source": "/script.js", "destination": "/page-home/src/script.js" }
+    { "source": "/script.js", "destination": "/page-home/src/script.js" },
+    { "source": "/tailwind.config.js", "destination": "/page-home/src/tailwind.config.js" }
   ]
 }
