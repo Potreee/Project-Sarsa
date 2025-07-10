@@ -1,20 +1,18 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/page-home/src/index.html" },
-    { "source": "/pricelist", "destination": "/page-service/src/index.html" },
+    { "source": "/pricelist", "destination": "/page-pricelist/src/index.html" },
     { "source": "/kolaborasi", "destination": "/page-workshop/src/index.html" },
     { "source": "/error", "destination": "/page-error/src/index.html" },
 
-    { "source": "/pricelist/img/:path*", "destination": "/page-service/src/img/:path*" },
-    { "source": "/pricelist/script.js", "destination": "/page-service/src/script.js" },
-
-    { "source": "/kolaborasi/img/:path*", "destination": "/page-workshop/src/img/:path*" },
-    { "source": "/kolaborasi/script.js", "destination": "/page-workshop/src/script.js" },
-
-    { "source": "/error/img/:path*", "destination": "/page-error/src/img/:path*" },
-    { "source": "/error/script.js", "destination": "/page-error/src/script.js" },
+    { "source": "/:page/img/:path*", "destination": "/page-:page/src/img/:path*" },
+    { "source": "/:page/script.js", "destination": "/page-:page/src/script.js" },
+    { "source": "/:page/script-:name.js", "destination": "/page-:page/src/script-:name.js" },
+    { "source": "/:page/tailwind.config.js", "destination": "/page-:page/src/tailwind.config.js" },
 
     { "source": "/img/:path*", "destination": "/page-home/src/img/:path*" },
-    { "source": "/script.js", "destination": "/page-home/src/script.js" }
+    { "source": "/script.js", "destination": "/page-home/src/script.js" },
+    { "source": "/script-:name.js", "destination": "/page-home/src/script-:name.js" },
+    { "source": "/tailwind.config.js", "destination": "/page-home/src/tailwind.config.js" }
   ]
 }
